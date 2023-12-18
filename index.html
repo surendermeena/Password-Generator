@@ -6,28 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passwrod Generator</title>
     <link rel="stylesheet" href="main.css">
-    
+
 
 </head>
 
 <body>
-    <div class="container bg-red-500">
+    <div class="container">
         <h1>Password Generator</h1>
 
         <div class="display-container">
 
             <input readonly placeholder="Password" class="display" data-passwordDisplay>
 
-            <button class="p-24">
+            <button class="p-4">
 
                 <span data-copyMsg>Copied</span>
-                <i class="fa-light fa-clone w-[23px] h-[23px]"></i>
+
+                <i class="fa-regular fa-copy" data-copy></i>
             </button>
         </div>
 
-        <div>
-            
-            </div
+        <div class="input-container">
+            <div class="length-container">
+                <p>Password Length</p>
+                <p data-lengthNumber> 0 </p>
+            </div>
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider value="10" >
+            <!-- check boxes -->
+            <div>
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">Includes UpperCase</label>
+
+                <input type="checkbox" id="lowercase">
+                <label for="uppercase">Includes LowerCase</label>
+
+                <input type="checkbox" id="numbers">
+                <label for="uppercase">Includes Numbers</label>
+
+                <input type="checkbox" id="symbols">
+                <label for="uppercase">Includes Symbols</label>
+
+            </div>
+
+            <div class="strength-container">
+                <p>Strength of your Password</p>
+                <div class="rounded-full w-3 h-3 bg-red-600 " data-indicator></div>
+            </div>
+            <!-- Generate Password Button -->
+            <button class="generate-button">
+                Generate Password
+            </button>
+        </div>
 
 
 
@@ -36,6 +65,7 @@
 
 
     <script src="https://kit.fontawesome.com/b4f79fc62c.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
